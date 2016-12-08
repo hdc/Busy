@@ -1,3 +1,5 @@
+Gemfile.lock
+Gemfile
 ##keep your published site out
 _site
 ##caches should only be local
