@@ -21,7 +21,6 @@ defaults:
   values:
     layout: page
 permalink: pretty
-
 exclude:
 - Gemfile
 - Gemfile.lock
@@ -30,7 +29,6 @@ exclude:
 - ".gitignore"
 - README.md
 - bower_components
-
 sass:
   sass_dir: assets/styles/
   style: compressed
