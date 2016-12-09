@@ -6,11 +6,11 @@
                     <a class="logo" href="/">Busy Patch Drop In and Play Child Care</a>
                     <nav class="header-nav">
                         <ul class="header-nav-list">
-                            {{ nav from="/" include_home="false" scope="tag" }}
+                            {% for item in site.data.navigation.header %}
                             <li class="header-nav-item">
-                                <a class="header-nav-link {{ if is_current or is_parent }} active {{ /if }}" href="{{ url }}">{{ tag:nav_title or title }}</a>
+                                <a class="header-nav-link" href="{{ item.url }}">{{ item.title }}</a>
                             </li>
-                            {{ /nav }}
+                            {% endfor %}
                         </ul>
                     </nav>
                     <button class="menu-button hidden-md-up"><span class="lines"></span></button>

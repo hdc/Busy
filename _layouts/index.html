@@ -46,10 +46,11 @@ layout: default
 				<div class="col-xs-12">
 					<h2 class="fancy-hdr text-xs-center">Services We Offer</h2>
 				</div>
+				{% for s in site.pages.services %}
 				<div class="col-xs-12 col-md-4">
 					<article class="card card-services">
 						<div class="card-block">
-							<h3 class="card-title font-display">title</h3>
+							<h3 class="card-title font-display">{{ s.title }}</h3>
 						</div>
 						<img class="img-fluid" src="" alt="Card image">
 						<div class="card-block">
@@ -58,6 +59,7 @@ layout: default
 						</div>
 					</article>
 				</div>
+				{% endfor %}
 				<div class="col-xs-12 text-xs-center m-t-3">
 					<a class="btn btn-secondary" href="/services">See All Current and Seasonal</a>
 				</div>
