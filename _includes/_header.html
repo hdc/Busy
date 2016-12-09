@@ -1,0 +1,21 @@
+<header class="header">
+    <div class="header-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <a class="logo" href="/">Busy Patch Drop In and Play Child Care</a>
+                    <nav class="header-nav">
+                        <ul class="header-nav-list">
+                            {{ nav from="/" include_home="false" scope="tag" }}
+                            <li class="header-nav-item">
+                                <a class="header-nav-link {{ if is_current or is_parent }} active {{ /if }}" href="{{ url }}">{{ tag:nav_title or title }}</a>
+                            </li>
+                            {{ /nav }}
+                        </ul>
+                    </nav>
+                    <button class="menu-button hidden-md-up"><span class="lines"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

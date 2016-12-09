@@ -1,6 +1,7 @@
 ---
 title: Busy Patch
 timezone: America/New_York
+baseurl: ""
 collections:
   posts:
     title: Posts
@@ -19,7 +20,7 @@ defaults:
     path: ''
     type: pages
   values:
-    layout: page
+    layout: default
 permalink: pretty
 
 exclude:
@@ -30,7 +31,30 @@ exclude:
 - ".gitignore"
 - README.md
 - bower_components
+- gulpfile.js
+- .asset-cache
 
-sass:
-  sass_dir: assets/styles/
-  style: compressed
+gems:
+  - jekyll-assets
+
+assets:
+
+
+  autoprefixer:
+      browsers:
+        - "last 2 versions"
+        - "IE > 9"
+
+  assets:
+      - "/images/*.png"
+
+  sources:
+      - _assets/css
+      - _assets/_sass
+      - _assets/images
+      - _assets/javascripts
+      - _assets/stylesheets
+      - _assets/fonts
+      - _assets/img
+      - _assets/js
+      - _assets/bower
