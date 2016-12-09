@@ -2,21 +2,22 @@
 layout: default
 ---
 
+{% assign feature = page.feature %}
 <div class="section-hero section-hero-video">
 	<div class="hero-video">
 		<div class="hero-bg-wrapper">
 			<video class="bg-video" preload="yes" autoplay loop >
 				<source src="../images/video.mp4" type="video/mp4">
 			</video>
-			<div class="hero-overlay" style="background-color: rgba(52,199,235,.8)"></div>
+			<div class="hero-overlay" style="background-color: {{ feature.background-color }}"></div>
 		</div>
 		<div class="hero-content-wrapper">
 			<div class="hero-content-inner">
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-7 m-x-auto">
-							<h1 class="hero-title">Drop-in Play Childcare</h1>
-							<p class="hero-subtitle">No membership and no enrollment fees.  Pay for time used, it’s that simple!</p>
+							<h1 class="hero-title">{{ feature.Title }}</h1>
+							<p class="hero-subtitle">{{ feature.description}}</p>
 						</div>
 					</div>
 				</div>
@@ -30,10 +31,10 @@ layout: default
 			<div class="row">
 				<div class="col-xs-12 col-md-8 m-x-auto">
 					<div class="welcome-wrap">
-						<h2 class="page-title">Welcome To Busy Patch</h2>
-						<p class="body-copy">
-							copy
-						</p>
+						<h2 class="page-title">{{ page.intro.headline }}</h2>
+						<div class="body-copy">
+							{{ page.intro.description }}
+						</div>
 					</div>
 				</div>
 			</div>
