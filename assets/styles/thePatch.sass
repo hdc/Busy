@@ -1,0 +1,421 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import base
+@import helpers
+@import header
+@import footer
+@import blog
+
+html, body
+	background: #EAEDF1
+
+.app
+	max-width: 1600px
+	background: #ffffff
+	margin: 0 auto
+	position: relative
+	box-shadow: 0 0 5px darken($gray-light,20%)
+
+.section
+	padding: $spacer * 4 $spacer
+
+	// HERO Section
+	&-hero
+		min-height: 40rem
+		position: relative
+		width: 100%
+		overflow: hidden
+		&-video
+			min-height: 38rem
+		.hero-bg-wrapper
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			width: 100%
+			height: 100%
+			background-size: cover
+			background-position: center center
+			background-repeat: no-repeat
+			display: block
+		.hero-content-wrapper
+			position: absolute
+			top: 50%
+			left: 50%
+			width: 100%
+			margin: 0
+			padding: 0
+			z-index: 20
+			text-align: center
+			transform: translate3d(-50%, -50%, 0)
+		.hero-overlay
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			width: 100%
+			height: 100%
+		.hero-content-inner
+			color: #ffffff
+
+		.hero-title
+			+fontSize(82px)
+			font-family: $font-family-display
+
+		.hero-subtitle
+			+fontSize(18px)
+			font-weight: 400
+			letter-spacing: 1px
+
+	// SERVICES Section
+	&-services
+		background: #EAEDF1
+		border-top: 1px solid $gray
+		border-bottom: 1px solid $gray
+		@media (max-width: 992px)
+			.card
+				max-width: 35rem
+				margin-right: auto
+				margin-left: auto
+
+		.card-title
+			color: $brand-tertiary
+			font-family: $font-family-display
+			text-transform: uppercase
+			text-align: center
+			margin-bottom: 0
+		.card-link
+			text-align: center
+			display: block
+			margin-bottom: 0
+
+	&-services-list
+		text-align: center
+		border-top: 1px solid $gray-light
+		.news-title
+			color: $gray
+			margin-bottom: $spacer * 3
+		
+	&-review
+		color: $gray-lighter
+		font-family: $font-family-serif
+		line-height: $line-height-lg * 1.5
+		text-align: center
+		.review-title
+			+fontSize(34px)
+			margin-bottom: 0
+			font-family: $font-family-display
+		.review-text, cite
+			+fontSize(20px)
+
+		.row-review
+			min-height: 20rem
+
+		.review-inner
+			position: relative
+			&:before
+				position: absolute
+				top: -118px
+				left: -24px
+				display: block
+				content: '“'
+				+fontSize(200px)
+				opacity: .2
+
+	&-orange
+		background-color: $brand-tertiary
+	&-blue
+		background-color: $brand-primary
+	&-purple
+		background-color: $brand-secondary
+	&-pink
+		background-color: $brand-quaternary
+
+	&-testimonials
+		.testimonial-block
+			margin-bottom: $spacer * 3
+		.card-title
+			+fontSize(28px)
+			color: $brand-secondary
+			font-family: $font-family-display
+		.card-text
+			color: lighten($gray-dark,20%)
+		.cite
+			margin-left: 10%
+			display: block
+			color: lighten($gray-dark,20%)
+
+
+	&-blog-post
+		+media-breakpoint-up(md)
+			.card
+				max-width: 35rem
+				margin-right: auto
+				margin-left: auto
+		.post-inner
+			padding: 0 $spacer / 2
+		.card-blog-post-header
+			position: relative
+			height: 0
+			width: 100%
+			overflow: hidden
+			padding-bottom: 55%
+
+		.bg-image
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			width: 100%
+			height: 100%
+			background-repeat: no-repeat
+			background-size: cover
+			background-position: center center
+			transition: transform 0.3s ease
+		.top-content
+			height: 18rem
+
+		.bottom-content
+			+fontSize(14px)
+
+		.post-cta
+			display: inline-block
+		.meta
+			display: inline-block
+			float: right
+
+	// PAGE BUILDER SECTIONS
+	&-marquee
+		position: relative
+		display: block
+		width: 100%
+		overflow: hidden
+		.marquee-wrapper
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			height: 100%
+			width: 100%
+			background-size: cover
+			background-position: center center
+			background-repeat: no-repeat
+		.marquee-content
+			height: 25rem
+		.marquee-title
+			+fontSize(64px)
+			color: $gray-lighter
+			font-family: $font-family-serif
+			text-shadow: 0px 0px 20px rgba(81,53,0,0.5)
+
+	&-two-column
+		.column-title
+			margin-bottom: $spacer * 1.5
+			font-family: $font-family-serif
+
+
+	&-fancy-list
+		.card-fancy-header
+			height: 5rem
+			padding: 1.25rem 0
+			position: relative
+			border-bottom: 1px dotted $gray
+			background-color: lighten($brand-primary,15%)
+
+		.punch
+			display: inline-block
+			width: 2.5rem
+			height: 2.5rem
+			background-color: #EAEDF1
+			border-radius: 50%
+			&.punch-left
+				margin-left: 20%
+				float: left
+			&.punch-right
+				margin-right: 20%
+				float: right
+
+
+
+		.card-fancy-body
+			margin: $spacer * 2 $spacer * 2 0
+			+media-breakpoint-down(sm)
+				margin: $spacer * 2 $spacer 0
+
+		.fancy-title
+			font-family: $font-family-display
+			text-align: center
+			color: $brand-primary
+			border-bottom: 1px solid $gray
+			padding-bottom: $spacer * 2
+			+fontSize(52px)
+
+		.fancy-inner
+			margin: 0 $spacer * 2 $spacer * 3
+			padding: 0 0 $spacer
+			+media-breakpoint-down(sm)
+				margin: 0 $spacer $spacer * 3
+		.fancy-list
+			padding: $spacer * 2 0 0 0
+			overflow: hidden
+		.fancy-list-item
+			display: inline-block
+			float: left
+			width: 50%
+			+fontSize(16px)
+			+media-breakpoint-down(md)
+				width: 100%
+		.list-copy
+			position: relative
+			font-family: $font-family-serif
+			color: $brand-secondary
+			min-height: 2rem
+			margin: 1rem 0 2rem 4rem
+			display: block
+			&:before
+				left: -4rem
+				top: -.65rem
+				width: 3.3rem
+				height: 3.3rem
+				content: ''
+				position: absolute
+				display: inline-block
+				background-size: cover
+				background-repeat: no-repeat
+				background-position: center
+				background-image: url('../images/watercolor-dot.png')
+
+	&-programs
+		.programs-table-col
+			display: table-cell
+			width: 33.3%
+		&.shaded-bgd
+			.card-program
+				background-color: #ffffff
+		.news-title
+			font-family: $font-family-display
+			text-align: center
+			+fontSize(52px)
+		.card-program
+			background-color: lighten(#EAEDF1,3%)
+			margin-bottom: $spacer * 1
+		.content-wrap
+			padding: $spacer
+		.content-inner
+			padding: $spacer
+			&:after
+				content: ''
+				position: absolute
+				top: $spacer
+				right: $spacer
+				left: $spacer
+				bottom: $spacer
+				display: block
+				border: 1px dashed
+				+border-radius()
+		.card-title
+			margin: $spacer 0 $spacer 0
+			padding: 0 $spacer / 2
+			font-family: $font-family-serif
+			line-height: 137.5%
+			text-align: center
+			+fontSize(20px)
+		.card-copy
+			+fontSize(14px)
+		.card-inner-purple
+			&:after
+				border-color: $brand-secondary
+			.card-title
+				color: $brand-secondary
+			.program-list-item
+				border-bottom: 1px dashed $brand-secondary
+			.program-list-title
+				&:before
+					background-color: $brand-secondary
+		.card-inner-blue
+			&:after
+				border-color: $brand-primary
+			.card-title
+				color: $brand-primary
+			.program-list-item
+				border-bottom: 1px dashed $brand-primary
+			.program-list-title
+				&:before
+					background-color: $brand-primary
+		.card-inner-orange
+			&:after
+				border-color: $brand-tertiary
+			.card-title
+				color: $brand-tertiary
+			.program-list-item
+				border-bottom: 1px dashed $brand-tertiary
+			.program-list-title
+				&:before
+					background-color: $brand-tertiary
+		.card-inner-pink
+			&:after
+				border-color: $brand-quaternary
+			.card-title
+				color: $brand-quaternary
+			.program-list-item
+				border-bottom: 1px dashed $brand-quaternary
+			.program-list-title
+				&:before
+					background-color: $brand-quaternary
+
+		.program-list
+			list-style: none
+			margin: 0
+			padding: 0
+			&-item
+				display: block
+				padding: $spacer * 1 0
+				&:last-child
+					border-bottom: none
+			&-title
+				position: relative
+				padding-left: 1.5rem
+				margin-bottom: 0
+				+fontSize(14px)
+				&:before
+					content: ''
+					position: relative
+					display: inline-block
+					top: 0
+					left: -.75rem
+					width: 0.5rem
+					height: 0.5rem
+					border-radius: 50%
+
+		.card-columns
+			+media-breakpoint-down(md)
+				column-count: 2
+			+media-breakpoint-down(sm)
+				column-count: 1
+
+
+.welcome-wrap
+	text-align: center
+	.page-title
+		font-family: $font-family-display
+		text-transform: uppercase
+		font-size: $display4-size
+	.body-copy
+		@extend .lead
+		font-family: $font-family-serif
+
+.fancy-hdr
+	font-family: $font-family-display
+	text-transform: uppercase
+	padding-bottom: $spacer * 3
+	+fontSize(38px)
+
+
+.news-title
+	font-family: $font-family-serif

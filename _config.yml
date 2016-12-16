@@ -22,32 +22,10 @@ defaults:
     layout: default
 baseurl: ''
 permalink: pretty
-exclude:
-- Gemfile
-- Gemfile.lock
-- node_modules
-- package.json
-- ".gitignore"
-- README.md
-- bower_components
-- gulpfile.js
-- ".asset-cache"
-gems:
-- jekyll-assets
-assets:
-  autoprefixer:
-    browsers:
-    - last 2 versions
-    - IE > 9
-  assets:
-  - "/images/*.png"
-  sources:
-  - _assets/css
-  - _assets/_sass
-  - _assets/images
-  - _assets/javascripts
-  - _assets/stylesheets
-  - _assets/fonts
-  - _assets/img
-  - _assets/js
-  - _assets/bower
+
+markdown: kramdown
+gems: [bootstrap, autoprefixer-rails, jekyll-assets]
+
+sass:
+    sass_dir: assets/styles/
+    style: compressed

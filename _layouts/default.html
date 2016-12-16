@@ -9,19 +9,20 @@
 
     <!-- CSS -->
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-    {% css thePatch %}
+    <link rel="stylesheet" href="/assets/styles/thePatch.css">
+
 
     <!-- Google Custom Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,500italic,400italic|Material+Icons|Amatic+SC:400,700|PT+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
-{% include _header.html %}
+{% include header.html %}
 
 <div class="app">
 
     {{ content }}
 
-    {% include _footer.html %}
+    {% include footer.html %}
 
 </div>
 
