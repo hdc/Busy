@@ -22,10 +22,11 @@ defaults:
     layout: default
 baseurl: ''
 permalink: pretty
-
 markdown: kramdown
-gems: [bootstrap, autoprefixer-rails, jekyll-assets]
-
+gems:
+- bootstrap
+- autoprefixer-rails
+- jekyll-assets
 sass:
-    sass_dir: assets/styles/
-    style: compressed
+  sass_dir: assets/styles/
+  style: compressed
