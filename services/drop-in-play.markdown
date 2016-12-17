@@ -1,6 +1,11 @@
 ---
 title: Drop-in and Play
 date: 2016-12-09 14:00:00 -05:00
+fancy-list:
+  headline: 
+  list-text:
+  - Complete a registration form on your first visit
+  - There are no Registration/Membership/Supply fees
 cards:
 - text: 
   list:
