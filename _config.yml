@@ -20,6 +20,15 @@ defaults:
     type: pages
   values:
     layout: default
+    fancy-list:
+      headline:
+      list-text:
+      -
+      -
+    cards:
+    - text:
+      list:
+      -
 baseurl: ''
 permalink: pretty
 markdown: kramdown
