@@ -7,7 +7,12 @@ fancy-list:
   - Complete a registration form on your first visit
   - There are no Registration/Membership/Supply fees
 cards:
-- text: Come in and play
+- color:
+    is purple: 
+    is blue: 
+    is pink: 
+    is orange: 
+  text: Come in and play
   list:
   - some text
 ---
