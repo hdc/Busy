@@ -2,9 +2,6 @@
 title: Busy Patch
 timezone: America/New_York
 collections:
-  ecom:
-    title: Ecom
-    output: false
   posts:
     title: Posts
     output: true
