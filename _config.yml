@@ -21,13 +21,13 @@ defaults:
   values:
     layout: page
     fancy-list:
-      headline:
+      headline: 
       list-text:
-      -
+      - 
     cards:
-    - text:
+    - text: 
       list:
-      -
+      - 
 baseurl: ''
 permalink: pretty
 markdown: kramdown
