@@ -19,11 +19,10 @@ defaults:
     path: ''
     type: pages
   values:
-    layout: default
+    layout: page
     fancy-list:
       headline:
       list-text:
-      -
       -
     cards:
     - text:
