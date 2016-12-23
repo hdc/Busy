@@ -54,3 +54,40 @@ layout: default
 	</div>
 </section>
 {% endif %}
+
+<div class="section section-programs shaded-bgd">
+	<div class="container">
+		<div class="row">
+			<div class="card-deck-wrapper">
+				<div class="card-deck">
+					{% for card in page.cards %}
+					<div class="card card-program">
+						<div class="content-wrap">
+							<div class="content-inner card-inner-{% cycle 'purple', 'blue', 'orange', 'pink' %}">
+								<p class="card-copy">{{ card.text }}</p>
+								{% if card.list %}
+								<ul class="program-list">
+									{% for value in card.list  %}
+									<li class="program-list-item">
+										<p class="program-list-title">{{ value }}</p>
+									</li>
+									{% endfor %}
+								</ul>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+					{% if forloop.index3 == true or forloop.index > 0 or forloop.index != forloop.length %}
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="card-deck-wrapper">
+				<div class="card-deck">
+					{% endif %}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

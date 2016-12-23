@@ -10,8 +10,8 @@ cards:
 - color:
     is purple:
     is blue:
-    is pink:
-    is orange:
+    is-pink:
+    is-orange: 'true'
   text: Come in and play
   list:
   - Some Text
