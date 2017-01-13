@@ -64,7 +64,7 @@ layout: default
 					<div class="card card-program">
 						<div class="content-wrap">
 							<div class="content-inner card-inner-{% cycle 'purple', 'blue', 'orange', 'pink' %}">
-								<p class="card-copy">{{ card.text }}</p>
+								<h4 class="card-title">{{ card.title }}</h4>
 								{% if card.list %}
 								<ul class="program-list">
 									{% for value in card.list  %}
@@ -74,13 +74,15 @@ layout: default
 									{% endfor %}
 								</ul>
 								{% endif %}
+								<div class="card-text">{{ card.text | markdownify }}</div>
 							</div>
 						</div>
 					</div>
-					{% if forloop.index3 == true or forloop.index > 0 or forloop.index != forloop.length %}
 				</div>
+				{% if forloop.length == modulo:3 and forloop.first and forloop.last  %}
 			</div>
 		</div>
+
 		<div class="row">
 			<div class="card-deck-wrapper">
 				<div class="card-deck">
