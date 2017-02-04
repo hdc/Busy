@@ -7,10 +7,16 @@ fancy-list:
   - Complete a [registration](http://www.thorlo.com) form on your first visit
   - There are no Registration/Membership/Supply fees
 cards:
-- text: Come in and play
+- title: Card Title
+  text: Busy Patch brings to the Denver area an innovative solution
   list:
   - some text
-- text: Next Block
+- title: Card Title
+  text: Next Block
+  list:
+  - new list
+- title: Card Title
+  text: Next Block
   list:
   - new list
 ---

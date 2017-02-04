@@ -3,12 +3,14 @@ layout: default
 ---
 
 {% if page.content %}
-<div class="section shaded-bgd">
+<div class="section section-welcome">
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-10 mx-auto">
-				<div class="text-body">
-					{{ content }}
+			<div class="col-xs-12 col-md-8 mx-auto">
+				<div class="welcome-wrap">
+					<p class="body-copy">
+						{{ content }}
+					</p>
 				</div>
 			</div>
 		</div>
@@ -16,7 +18,7 @@ layout: default
 </div>
 {% endif %}
 
-{% if page.fancy-list %}
+{% if page.fancy-list.headline or page.fancy-list.list-text.list-text %}
 <section class="section section-fancy-list shaded-bgd">
 	<div class="container">
 		<div class="row">
@@ -38,7 +40,7 @@ layout: default
 									<ul class="fancy-list">
 										{% for value in page.fancy-list.list-text %}
 										<li class="fancy-list-item">
-											<p class="list-copy">{{ value }}</p>
+											<div class="list-copy">{{ value | markdownify }}</div>
 										</li>
 										{% endfor %}
 									</ul>
@@ -52,3 +54,42 @@ layout: default
 	</div>
 </section>
 {% endif %}
+
+<div class="section section-programs shaded-bgd">
+	<div class="container">
+		<div class="row">
+			<div class="card-deck-wrapper">
+				<div class="card-deck">
+					{% for card in page.cards %}
+					<div class="card card-program">
+						<div class="content-wrap">
+							<div class="content-inner card-inner-{% cycle 'purple', 'blue', 'orange', 'pink' %}">
+								<h4 class="card-title">{{ card.title }}</h4>
+								{% if card.list %}
+								<ul class="program-list">
+									{% for value in card.list  %}
+									<li class="program-list-item">
+										<p class="program-list-title">{{ value }}</p>
+									</li>
+									{% endfor %}
+								</ul>
+								{% endif %}
+								<div class="card-text">{{ card.text | markdownify }}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% if forloop.length == modulo:3 and forloop.first and forloop.last  %}
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="card-deck-wrapper">
+				<div class="card-deck">
+					{% endif %}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
