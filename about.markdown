@@ -2,7 +2,7 @@
 title: About
 date: 2016-12-09 13:43:00 -05:00
 fancy-list:
-  headline: Changed Headline
+  headline: WOW Headline
 ---
 
 About Content new content
