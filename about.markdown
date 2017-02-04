@@ -5,4 +5,4 @@ fancy-list:
   headline: What What Headline
 ---
 
-About Content new content
+content
