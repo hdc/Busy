@@ -28,7 +28,7 @@ defaults:
     - text: 
       list:
       - 
-baseurl: ''
+baseurl: 
 permalink: pretty
 markdown: kramdown
 gems:
