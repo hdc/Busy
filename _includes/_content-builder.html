@@ -82,7 +82,7 @@
                                     <ul class="fancy-list">
                                         {{ list_items }}
                                         <li class="fancy-list-item">
-                                            <p class="list-copy">{{ value }}</p>
+                                            <p class="list-copy">{{ value | markdownify }}</p>
                                         </li>
                                         {{ /list_items }}
                                     </ul>

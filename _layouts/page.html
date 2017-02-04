@@ -40,7 +40,7 @@ layout: default
 									<ul class="fancy-list">
 										{% for value in page.fancy-list.list-text %}
 										<li class="fancy-list-item">
-											<p class="list-copy">{{ value }}</p>
+											<div class="list-copy">{{ value | markdownify }}</div>
 										</li>
 										{% endfor %}
 									</ul>
