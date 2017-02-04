@@ -1,0 +1,61 @@
+// Functions
+@function calculateRem($size)
+	$remSize: $size / $font-size-root
+	@return #{$remSize}rem
+
+=fontSize($size)
+	font-size: $size //Fallback in px
+	font-size: calculateRem($size)
+
+
+.display-table
+	display: table
+
+.display-table-cell
+	display: table-cell
+
+.text-orange
+	color: $brand-tertiary
+
+.btn-tertiary
+	@include button-variant($btn-tertiary-color, $btn-tertiary-bg, $btn-tertiary-border)
+
+.col-padding-left
+	padding-left: $spacer * 4
+	+media-breakpoint-down(md)
+		padding-left: $grid-gutter-width-base / 2
+
+.shaded-bgd
+	background: #EAEDF1
+	border-top: 1px solid $gray
+	border-bottom: 1px solid $gray
+
+
+
+.bottom-arrow
+	position: absolute
+	display: block
+	width: 0
+	height: 0
+	border-color: transparent
+	border-style: solid
+	border-width: 11px
+	bottom: -11px
+	left: 15%
+	margin-left: -11px
+	border-top-color: rgba(0,0,0,.25)
+	border-bottom-width: 0
+
+	&:after
+		content: ''
+		border-width: 10px
+		border-color: transparent
+		border-style: solid
+		position: absolute
+		display: block
+		width: 0
+		height: 0
+		bottom: 1px
+		margin-left: -10px
+		border-top-color: #fff
+		border-bottom-width: 0

@@ -1,0 +1,167 @@
+{{ content_builder }}
+
+{{ if type == "page_marquee" }}
+
+<div class="section-marquee">
+    <div class="marquee-wrapper" style="background-image:url('{{ marquee_image | url }}');"></div>
+    <div class="container">
+        <div class="row marquee-content flex-items-xs-middle">
+            <div class="col-xs-8 col-xs-offset-2 col-md-offset-0 col-md-5">
+                <h1 class="marquee-title">{{ if marquee_text }}{{ marquee_text }}{{ else }} {{ title }}{{ /if }}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ elseif type == "two_column" }}
+
+<div class="section section-two-column">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-padding-left push-md-6">
+                <h2 class="column-title">{{ column_headline }}</h2>
+                <p class="column-copy">{{ column_copy }}</p>
+            </div>
+            <div class="col-xs-12 col-md-6 pull-md-6">
+                <img class="w-100" src="{{ column_image | url }}" alt="{{ column_image | title }}">
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ elseif type == "lead_text" }}
+
+<div class="section section-welcome">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-8 m-x-auto">
+                <div class="welcome-wrap">
+                    <h2 class="page-title">{{ lead_headline }}</h2>
+                    <p class="body-copy">
+                        {{ lead_text_content }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ elseif type == "text" }}
+
+<div class="section {{ if shaded_background }}shaded-bgd{{ /if }}">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-10 m-x-auto">
+                <div class="text-body">
+                    {{ content }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ elseif type == "fancy_list" }}
+<section class="section section-fancy-list shaded-bgd">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="card card-fancy">
+                    <div class="card-fancy-header">
+                        <span class="punch punch-left"></span>
+                        <span class="punch punch-right"></span>
+                    </div>
+                    <div class="card-fancy-body">
+                        <div class="fancy-inner">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <h2 class="fancy-title">{{ list_headline }}</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <ul class="fancy-list">
+                                        {{ list_items }}
+                                        <li class="fancy-list-item">
+                                            <p class="list-copy">{{ value }}</p>
+                                        </li>
+                                        {{ /list_items }}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ elseif type == "testimonial" }}
+<div class="section section-review section-{{ background_color }}">
+    <div class="container">
+        <div class="row flex-items-xs-middle row-review">
+            <div class="col-xs-12 col-md-10 m-x-auto">
+                <div class="review-inner">
+                    {{ relate:quote }}
+                    <blockquote class="review-text">{{ quote }}</blockquote>
+                    <cite>- {{ cite }}</cite>
+                    {{ /relate:quote }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ elseif type == "programs" }}
+<div class="section section-programs {{ if shaded_background }}shaded-bgd{{ /if }}">
+    <div class="container">
+        {{ if section_title or section_intro }}
+        <div class="row">
+            <div class="col-xs-12 col-md-9 m-x-auto m-b-3">
+                <h2 class="news-title">{{ section_title }}</h2>
+                <div class="body-copy">
+                    {{ section_intro }}
+                </div>
+            </div>
+        </div>
+        {{ endif }}
+
+        <div class="row">
+            <div class="card-deck-wrapper">
+                <div class="card-deck">
+                    {{ card }}
+                    <div class="card card-program">
+                        <div class="content-wrap">
+                            <div class="content-inner card-inner-{{ switch between='purple|orange|blue|pink' }}">
+                                <h4 class="card-title">{{ card_title }}</h4>
+                                {{ if card_copy }}<p class="card-copy">{{ card_copy }}</p>{{ endif }}
+                                {{ if card_list }}
+                                <ul class="program-list">
+                                    {{ card_list }}
+                                    <li class="program-list-item">
+                                        <p class="program-list-title">{{ value }}</p>
+                                    </li>
+                                    {{ /card_list }}
+                                </ul>
+                                {{ endif }}
+                            </div>
+                        </div>
+                    </div>
+                    {{ if index % 3 == 0 && index > 0 && index != total_results }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card-deck-wrapper">
+                <div class="card-deck">
+                    {{ endif }}
+                    {{ /card }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ /if }}
+
+{{ /content_builder }}

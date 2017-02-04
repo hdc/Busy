@@ -1,0 +1,40 @@
+---
+title: Busy Patch
+timezone: America/New_York
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+defaults:
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: post
+    permalink: "/posts/:title/"
+- scope:
+    path: ''
+    type: pages
+  values:
+    layout: page
+    fancy-list:
+      headline: 
+      list-text:
+      - 
+    cards:
+    - text: 
+      list:
+      - 
+baseurl: 
+permalink: pretty
+markdown: kramdown
+gems:
+- bootstrap
+- autoprefixer-rails
+- jekyll-assets
+sass:
+  sass_dir: assets/styles/
+  style: compressed

@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+{% if page.content %}
+<div class="section shaded-bgd">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-10 mx-auto">
+				<div class="text-body">
+					{{ content }}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}
+
+{% if page.fancy-list %}
+<section class="section section-fancy-list shaded-bgd">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="card card-fancy">
+					<div class="card-fancy-header">
+						<span class="punch punch-left"></span>
+						<span class="punch punch-right"></span>
+					</div>
+					<div class="card-fancy-body">
+						<div class="fancy-inner">
+							<div class="row">
+								<div class="col-xs-12">
+									<h2 class="fancy-title">{{ page.fancy-list.headline }}</h2>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12">
+									<ul class="fancy-list">
+										{% for value in page.fancy-list.list-text %}
+										<li class="fancy-list-item">
+											<p class="list-copy">{{ value }}</p>
+										</li>
+										{% endfor %}
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endif %}

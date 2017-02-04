@@ -1,0 +1,79 @@
+---
+layout: default
+---
+
+{% assign feature = page.feature %}
+<div class="section-hero section-hero-video">
+	<div class="hero-video">
+		<div class="hero-bg-wrapper">
+			<video class="bg-video" preload="yes" autoplay loop >
+				<source src="/assetsc/images/video.mp4" type="video/mp4">
+			</video>
+			<div class="hero-overlay" style="background-color: {{ feature.background-color }}"></div>
+		</div>
+		<div class="hero-content-wrapper">
+			<div class="hero-content-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-7 mx-auto">
+							<h1 class="hero-title">{{ feature.Title }}</h1>
+							<p class="hero-subtitle">{{ feature.description}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="page-sections">
+	<div class="section section-welcome">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-8 mx-auto">
+					<div class="welcome-wrap">
+						<h2 class="page-title">{{ page.intro.headline }}</h2>
+						<div class="body-copy">
+							{{ page.intro.description }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section section-services">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h2 class="fancy-hdr text-xs-center">Services We Offer</h2>
+				</div>
+				{% for s in site.pages.services %}
+				<div class="col-xs-12 col-md-4">
+					<article class="card card-services">
+						<div class="card-block">
+							<h3 class="card-title font-display">{{ s.title }}</h3>
+						</div>
+						<img class="img-fluid" src="" alt="Card image">
+						<div class="card-block">
+							<p class="card-text">copy text</p>
+							<a href="#" class="card-link">Learn More</a>
+						</div>
+					</article>
+				</div>
+				{% endfor %}
+				<div class="col-xs-12 text-xs-center m-t-3">
+					<a class="btn btn-secondary" href="/services">See All Current and Seasonal</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section section-review">
+		<div class="container">
+			<div class="row flex-items-xs-middle row-review">
+				<div class="col-xs-12 col-md-8 mx-auto">
+					<p class="review-text">‘Busy Patch is absolutely the best!  My children (ages 2 and 4) love going and request it daily.  The staff is so friendly, the facility is extremely clean, and the play areas are adorable with so much variety for different interests.  We've even had both girl's birthday parties here the past couple of years and all of our guests have been so impressed!  Can't recommend it enough! :)’</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
